@@ -1,0 +1,16 @@
+<h2>My Heroes</h2>
+
+<div>
+  <app-hero-add (heroName)="add($event)"></app-hero-add>
+</div>
+
+<ul class="heroes" *ngIf="heroes" [@animateIn]="animateState">
+  <li *ngFor="let hero of heroes">
+    <app-hero [hero]="hero" (deleteHero)="delete($event)"></app-hero>
+<!--    <a routerLink="/detail/{{hero.id}}">-->
+<!--      <span class="badge">{{hero.id}}</span> {{hero.name}}-->
+<!--    </a>-->
+<!--    <button class="delete" title="delete hero"-->
+<!--    (click)="delete(hero)">x</button>-->
+  </li>
+</ul>
